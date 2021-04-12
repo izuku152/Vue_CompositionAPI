@@ -29,7 +29,6 @@ export default {
 
   // We can use both Options and Composition API
   // they cannot communicate b/w each other
-  // Template Refs
   data() {
     return {
       namee: "M. Hassan Hanif Khan",
