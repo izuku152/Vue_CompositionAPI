@@ -1,10 +1,9 @@
 <template>
   <div v-for="post in posts" :key="post">
-    <Post :post="post" />
+    <Post :post="post" v-if="showPost" />
   </div>
   <br />
-  <button @click="handleClick">Switch Posts</button>
-  <button @click="showPosts = !showPosts">Toggle Posts</button>
+  <button @click="showPost = !showPost">Toggle Post Component</button>
 </template>
 
 <script>
@@ -26,13 +25,13 @@ export default {
       console.log("Component Mounted");
     });
     onUnmounted(() => {
-      console.log("Component Unmounted");
+      console.log("PostList Component Unmounted");
     });
     onBeforeMount(() => {
       console.log("Before Mounted");
     });
-
-    return { handleClick };
+    const showPost = ref(true);
+    return { handleClick, showPost };
   },
 };
 </script>
