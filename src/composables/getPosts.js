@@ -6,6 +6,10 @@ const getPosts = () => {
     let data = await fetch("http://localhost:3000/projects");
 
     try {
+      // It will simulate delay for 2s
+      await new Promise((resolve) => {
+        setTimeout(resolve, 2000);
+      });
       // data.ok means if data comes succesfully
       if (!data.ok) {
         // error object will throw this error
