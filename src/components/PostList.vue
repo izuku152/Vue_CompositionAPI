@@ -4,9 +4,11 @@
   </div>
   <br />
   <button @click="handleClick">Switch Posts</button>
+  <button @click="showPosts = !showPosts">Toggle Posts</button>
 </template>
 
 <script>
+import { ref, onBeforeMount, onMounted, onUnmounted } from "vue";
 import Post from "./Post";
 export default {
   components: { Post },
@@ -20,6 +22,15 @@ export default {
       props.posts[0] = props.posts[1];
       props.posts[1] = post1;
     };
+    onMounted(() => {
+      console.log("Component Mounted");
+    });
+    onUnmounted(() => {
+      console.log("Component Unmounted");
+    });
+    onBeforeMount(() => {
+      console.log("Before Mounted");
+    });
 
     return { handleClick };
   },
