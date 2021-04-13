@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { computed, onUnmounted } from "vue";
+import { computed } from "vue";
 export default {
   props: ["post"],
   setup(props) {
@@ -17,10 +17,6 @@ export default {
       return props.post.body.substring(0, 100) + "....";
     });
     // When this component gets unmounted this function will run
-    onUnmounted(() => {
-      console.log("Post Component Unmounted");
-    });
-
     return { snippet };
   },
 };
