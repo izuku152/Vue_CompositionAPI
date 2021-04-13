@@ -1,6 +1,9 @@
 <template>
   <h6>Title:</h6>
-  <h3>{{ post.title }}</h3>
+  <!-- Router Link with component name and props -->
+  <router-link :to="{ name: 'Details', params: { id: post.id } }">
+    <h3>{{ post.title }}</h3>
+  </router-link>
   <h6>Details:</h6>
   <p>{{ snippet }}</p>
   <br />
