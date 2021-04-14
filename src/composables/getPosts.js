@@ -8,7 +8,7 @@ const getPosts = () => {
     try {
       // It will simulate delay for 2s
       await new Promise((resolve) => {
-        setTimeout(resolve, 2000);
+        setTimeout(resolve, 1000);
       });
       // data.ok means if data comes succesfully
       if (!data.ok) {
